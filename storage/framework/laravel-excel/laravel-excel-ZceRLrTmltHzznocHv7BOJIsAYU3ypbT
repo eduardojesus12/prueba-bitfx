@@ -1,0 +1,247 @@
+import React from "react"
+import { Grid } from "semantic-ui-react"
+
+//icons
+import {
+  IconMen,
+  IconWomen,
+  IconFechaNacimiento,
+  IconMapa,
+  IconMundo,
+  IconAltura,
+  IconPeso,
+  IconGotaSangre,
+  IconOcupacion,
+  IconGradoEstudio,
+  IconDonador,
+  IconEstadoCivil,
+  IconReligion,
+} from "../images/icons/icons"
+
+import BasicLayout from "../layouts/BasicLayout"
+import Text from "../components/inputsCustom/Text"
+// import Swiper core and required components
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+
+// Import Swiper styles
+import "swiper/swiper.scss"
+import "swiper/components/navigation/navigation.scss"
+import "swiper/components/pagination/pagination.scss"
+import "swiper/components/scrollbar/scrollbar.scss"
+
+// install Swiper components
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+
+export default function InfoBasic() {
+  return (
+    <BasicLayout view="info-basic">
+      <Grid.Row className="justify-content">
+        <h1>Información Básica</h1>
+      </Grid.Row>
+      <Grid.Row>
+        <div className="info-basic__slider-content">
+          <Swiper
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            // scrollbar={{ draggable: true }}
+            onSwiper={swiper => console.log(swiper)}
+            onSlideChange={() => console.log("slide change")}
+            className="slider-content"
+          >
+            <SwiperSlide>
+              {/* <Text className="justify-content" labelPlaceholder="Nombre completo" name="nombre" labelName="labelNombre" />
+                    <Text className="justify-content" labelPlaceholder="Domicilio " name="domicilio" labelName="labeldomicilio" /> */}
+              <Grid.Row className="justify-content">
+                <h2>Sexo</h2>
+              </Grid.Row>
+              <Grid.Row className="inputs-sex">
+                <input
+                  id="iconMen"
+                  type="radio"
+                  name="gender"
+                  className="hidden"
+                  readOnly=""
+                  tabIndex="0"
+                />
+                <label htmlFor="iconMen">
+                  <IconMen />
+                </label>
+                <input
+                  id="iconWomen"
+                  type="radio"
+                  name="gender"
+                  className="hidden"
+                  readOnly=""
+                  tabIndex="0"
+                />
+                <label htmlFor="iconWomen">
+                  <IconWomen />
+                </label>
+              </Grid.Row>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="slider-two">
+                <div>
+                  <IconFechaNacimiento />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Fecha de nacimiento"
+                    name="fechaNacimiento"
+                    labelName="labelFechaNacimiento"
+                  />
+                </div>
+                <div>
+                  <IconMapa />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Lugar de nacimiento"
+                    name="lugarNacimiento"
+                    labelName="labelLugarNacimiento"
+                  />
+                </div>
+                <div>
+                  <IconMundo />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="País de nacimiento"
+                    name="paisNacimiento"
+                    labelName="labelPaisNacimiento"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="slider-two">
+                <div>
+                  <IconAltura />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Altura (cm)"
+                    name="altura"
+                    labelName="labelAltura"
+                  />
+                </div>
+                <div>
+                  <IconPeso />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Peso (kg)"
+                    name="peso"
+                    labelName="labelPeso"
+                  />
+                </div>
+                <div>
+                  <IconGotaSangre />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Tipo Sangre"
+                    name="tipoSangre"
+                    labelName="labelTipoSangre"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="slider-two">
+                <div>
+                  <IconMapa />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Lugar de residencia"
+                    name="lugarResidencia"
+                    labelName="labelLugarResidencia"
+                  />
+                </div>
+                <div>
+                  <IconMundo />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="País de residencia"
+                    name="paisResidencia"
+                    labelName="labelPaisResidencia"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="slider-two">
+                <div>
+                  <IconGradoEstudio />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Grado máximo de estudios"
+                    name="gradoMaximo"
+                    labelName="labelGradoMaximo"
+                  />
+                </div>
+                <div>
+                  <IconOcupacion />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Ocupación"
+                    name="ocupacion"
+                    labelName="labelOcupacion"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="slider-two">
+                <div>
+                  <IconReligion />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Relegión"
+                    name="relegion"
+                    labelName="labelReligion"
+                  />
+                </div>
+                <div>
+                  <IconEstadoCivil />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Estado civil"
+                    name="estadoCivil"
+                    labelName="labelEstadoCivil"
+                  />
+                </div>
+                <div>
+                  <IconDonador />
+                  <Text
+                    className="justify-content"
+                    labelPlaceholder="Donador de organos"
+                    name="donador"
+                    labelName="labelDonador"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </Grid.Row>
+
+      {/* <Grid.Row className="justify-content">
+                <h1>Información Básica</h1>
+            </Grid.Row >
+
+            <Text className="justify-content" labelPlaceholder="Nombre completo" name="nombre" labelName="labelNombre" />
+            <Text className="justify-content" labelPlaceholder="Domicilio " name="domicilio" labelName="labeldomicilio" />
+            <Grid.Row className="justify-content">
+                <h2>Sexo</h2>
+            </Grid.Row>
+            <Grid.Row className="inputs-sex">
+                <input id="iconMen" type="radio" name="gender" className="hidden" readOnly="" tabIndex="0" />
+                <label htmlFor="iconMen"><IconMen /></label>
+                <input id="iconWomen" type="radio" name="gender" className="hidden" readOnly="" tabIndex="0" />
+                <label htmlFor="iconWomen"><IconWomen /></label>
+            </Grid.Row>
+            <Grid.Row className="svg">
+                {bullet}
+            </Grid.Row> */}
+    </BasicLayout>
+  )
+>>>>>>> cbd484e2ca23a1e06af5468318115ad0542367ce
